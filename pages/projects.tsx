@@ -1,9 +1,8 @@
-import { Box, Flex, Text } from '@chakra-ui/layout'
-import { ColorModeScript } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import { Footer } from '../componenets/footer'
 import Nav from '../componenets/navbar'
 
-const Home = () => {
+const Projects = () => {
   return (
     <Box>
       <Nav />
@@ -12,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Projects
