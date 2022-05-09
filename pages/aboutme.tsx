@@ -61,8 +61,7 @@ const AboutMe = () => {
               welcome you to stay and explore! test here
             </Text>
           </Box>
-          <Box>
-
+          <Box paddingLeft='50px'>
           <Image src='harden.jpg' alt='marquespictureholder' borderRadius='full' boxSize='150px' objectFit='cover'/>
           </Box>
         </Flex>
