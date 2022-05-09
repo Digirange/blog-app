@@ -2,12 +2,9 @@ import {
   Box,
   ButtonGroup,
   Center,
-  Container,
   Flex,
   IconButton,
   Link,
-  Stack,
-  Text,
   useColorModeValue,
 } from '@chakra-ui/react'
 import * as React from 'react'
@@ -38,8 +35,8 @@ export const Footer = () => (
       }}>
     <Box px={4} width="50%">
       <Flex
-        justifyContent="space-between"
-        paddingBottom="20px"
+        justifyContent="space-evenly"
+        paddingBottom="10px"
         alignItems="center"
         h={16}
       >

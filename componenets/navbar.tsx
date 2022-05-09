@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
+  Image,
 } from '@chakra-ui/react'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
@@ -33,7 +34,9 @@ export default function Nav() {
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box>
-            <Link href="/">Logo Here</Link>
+            <Link href="/">
+              <Image alt='logo' src='harden.jpg' borderRadius='full' boxSize='65px' objectFit='cover'/>
+            </Link>
           </Box>
           <Box>
             <Link href="/aboutme">About Me</Link>
