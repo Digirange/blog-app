@@ -1,4 +1,12 @@
-import { Box, Center, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Center,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from '@chakra-ui/react'
 import { Footer } from '../componenets/footer'
 import Nav from '../componenets/navbar'
 
@@ -6,12 +14,14 @@ const AboutMe = () => {
   return (
     <Box>
       <Nav />
-      <Box sx={{
-                    height: `calc(100vh - 120px)`,
-                    maxWidth: ['80%', '50%'],
-                    ml: 'auto',
-                    mr: 'auto'
-                }}>
+      <Box
+        sx={{
+          height: `calc(100vh - 120px)`,
+          maxWidth: ['80%', '50%'],
+          ml: 'auto',
+          mr: 'auto',
+        }}
+      >
         <Box>
           <Heading fontSize="5xl" fontWeight="bold">
             About Marques Stewart
@@ -19,11 +29,11 @@ const AboutMe = () => {
         </Box>
         <Flex>
           <Box width="100vh">
-            <Text fontSize="sm" padding="5px">
+            <Text fontSize="md" padding="10px">
               Father, gamer, and sports. Those three things would probably be
               the best way to describe myself in three words. Hello and welcome!
             </Text>
-            <Text fontSize="sm" padding="5px">
+            <Text fontSize="md" padding="10px">
               My name is Marques Stewart. Born in the Philadelphia area but grew
               up in the state of New Jersey in the United States. I have been an
               IT professional for the last six years, but looking to make a
@@ -36,7 +46,7 @@ const AboutMe = () => {
               this position as it opened my eyes to the many avenues in the
               technology field. Especially the world of coding.
             </Text>
-            <Text fontSize="sm" padding="5px">
+            <Text fontSize="md" padding="10px">
               My first introduction to the coding world was with the scripting
               language Powershell. I self taught myself everything I know about
               the language. Was able to create many usable scripts that I was
@@ -54,15 +64,21 @@ const AboutMe = () => {
               taught by professionals who have worked for some of the biggest
               names out there from Facebook, Netflix, etc.
             </Text>
-            <Text fontSize="sm" padding="5px">
+            <Text fontSize="md" padding="10px">
               You can expect blog posts featuring projects I worked on, personal
               and professional goals, or just inner personal thoughts and
               opinions on a wide variety of subjects. I am glad you’re here and
               welcome you to stay and explore! test here
             </Text>
           </Box>
-          <Box paddingLeft='50px'>
-          <Image src='harden.jpg' alt='marquespictureholder' borderRadius='full' boxSize='150px' objectFit='cover'/>
+          <Box paddingLeft="50px">
+            <Image
+              src="selfie1.png"
+              alt="marquespictureholder"
+              borderRadius="full"
+              boxSize="250px"
+              objectFit="cover"
+            />
           </Box>
         </Flex>
       </Box>
