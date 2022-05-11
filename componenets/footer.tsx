@@ -26,7 +26,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
   </Link>
 )
 
-export const Footer = () => (
+const Footer = () => (
   <Center bg={useColorModeValue('gray.100', 'gray.900')} sx={{
         position: 'fixed',
         left: 0,
@@ -69,3 +69,5 @@ export const Footer = () => (
     </Box>
   </Center>
 )
+
+export default Footer

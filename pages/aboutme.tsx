@@ -7,7 +7,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react'
-import { Footer } from '../componenets/footer'
+import  Footer  from '../componenets/footer'
 import Nav from '../componenets/navbar'
 
 const AboutMe = () => {

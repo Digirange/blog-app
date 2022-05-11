@@ -27,7 +27,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
   </Link>
 )
 
-export default function Nav() {
+const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <>
@@ -35,7 +35,13 @@ export default function Nav() {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box>
             <Link href="/">
-              <Image alt='logo' src='harden.jpg' borderRadius='full' boxSize='65px' objectFit='cover'/>
+              <Image
+                alt="logo"
+                src="../harden.jpg"
+                borderRadius="full"
+                boxSize="65px"
+                objectFit="cover"
+              />
             </Link>
           </Box>
           <Box>
@@ -55,3 +61,5 @@ export default function Nav() {
     </>
   )
 }
+
+export default Nav

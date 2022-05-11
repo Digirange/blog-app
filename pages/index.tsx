@@ -1,7 +1,7 @@
 import { Box, Grid, GridItem, Link, Text } from '@chakra-ui/layout'
 import { EmailIcon, LinkIcon } from '@chakra-ui/icons'
 import { Button, ButtonGroup, Image, Divider } from '@chakra-ui/react'
-import { Footer } from '../componenets/footer'
+import Footer from '../componenets/footer'
 import Nav from '../componenets/navbar'
 
 const Home = () => {
@@ -75,10 +75,10 @@ const Home = () => {
             <Divider border="1px" borderColor="black" />
           </GridItem>
           <GridItem rowStart={6} colStart={3} colEnd={4}>
-            <Text align="center" fontWeight='bold' fontSize='3xl'>Recent Blogs</Text>
-            <Text align='center'>
-              Recent Posts will go here
+            <Text align="center" fontWeight="bold" fontSize="3xl">
+              Recent Blogs
             </Text>
+            <Text align="center">Recent Posts will go here</Text>
           </GridItem>
         </Grid>
       </Box>
