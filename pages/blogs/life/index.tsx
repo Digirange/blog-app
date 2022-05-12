@@ -7,12 +7,21 @@ import Footer from '../../../componenets/footer'
 import Nav from '../../../componenets/navbar'
 import _ from 'lodash'
 
-const LifeBlogIndex = ({ posts }) => {
+const IndexPage = ({ posts }) => {
   return (
     <Box>
       <Nav />
-      <Box>
-        <Text>This is the index page of the life category</Text>
+      <Box padding="50px">
+        <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+          <GridItem colStart={3} rowStart={1}>
+            <Box>
+              <Text align="center">Life</Text>
+            </Box>
+          </GridItem>
+          <GridItem colStart={3} rowStart={2}>
+            <Text align="center">Posts go here</Text>
+          </GridItem>
+        </Grid>
       </Box>
       <Footer />
     </Box>
@@ -28,6 +37,8 @@ export const getStaticProps = async () => {
     .sortBy((x) => new Date(x.date))
     .reverse()
     .value()
+
+  return { props: { posts } }
 }
 
-export default LifeBlogIndex
+export default IndexPage
