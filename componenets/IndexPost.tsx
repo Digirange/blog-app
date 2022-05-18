@@ -7,7 +7,7 @@ const IndexPost = ({ data }) => {
     <Box>
       <article>
         <HeadPost data={data} />
-        <Link href={'/blog' + data.root + data.url}>
+        <Link href={'/blogs' + data.root + data.url}>
           <a>Read more... </a>
         </Link>
       </article>
