@@ -33,7 +33,7 @@ export function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ parmas }) {
+export async function getStaticProps({ params }) {
   const allPostsPaths = path.join(process.cwd(), 'posts/life')
   const globPosts = glob.sync('**/*.mdx', { cwd: allPostsPaths })
   const posts = _.chain(globPosts)
