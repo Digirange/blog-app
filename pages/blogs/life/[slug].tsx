@@ -7,7 +7,16 @@ import { Box } from '@chakra-ui/react'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 
-
+export default function IndexPage({ source, posts }) {
+    const {
+        scope: { title, description, url, date }
+    } = source
+    return (
+        <Box>
+            <MDXRemote {...source }/>
+        </Box>
+    )
+}
 
 
 export function getStaticPaths() {
