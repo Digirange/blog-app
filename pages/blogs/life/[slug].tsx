@@ -4,6 +4,11 @@ import _ from 'lodash'
 import path from 'path'
 import matter from 'gray-matter'
 import { Box } from '@chakra-ui/react'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
+
+
+
 
 export function getStaticPaths() {
   const postPaths = path.join(process.cwd(), 'posts/life')
@@ -20,15 +25,25 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps({ parmas }) {
-  const postPaths = path.join(process.cwd(), 'posts/life')
-  const globPosts = glob.sync('**/*.mdx', { cwd: postPaths })
+  const allPostsPaths = path.join(process.cwd(), 'posts/life')
+  const globPosts = glob.sync('**/*.mdx', { cwd: allPostsPaths })
   const posts = _.chain(globPosts)
-    .map((paths) => fs.readFileSync(path.join(postPaths, paths), 'utf-8'))
+    .map((paths) => fs.readFileSync(path.join(allPostsPaths, paths), 'utf-8'))
     .map((x) => matter(x).data)
     .sortBy((x) => new Date(x.date))
     .reverse()
     .slice(0, 10)
       .value()
     
-    const postPath = path.join(process.cwd())
+    const postsPath = path.join(process.cwd(), 'posts', 'life', params.slug + '.mdx')
+    const post = fs.readFileSync(postsPath, 'utf-8')
+    const { content, data } = matter(post)
+    const mdxSource = await serialize(content, { scope: data })
+
+    return {
+        props: {
+            source: mdxSource,
+            posts
+        }
+    }
 }
