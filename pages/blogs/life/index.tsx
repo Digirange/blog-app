@@ -3,6 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import glob from 'glob'
 import matter from 'gray-matter'
+import IndexPost from '../../../componenets/IndexPost'
 import Footer from '../../../componenets/footer'
 import Nav from '../../../componenets/navbar'
 import _ from 'lodash'
@@ -19,7 +20,9 @@ const IndexPage = ({ posts }) => {
             </Box>
           </GridItem>
           <GridItem colStart={3} rowStart={2}>
-            <Text align="center">Posts go here</Text>
+            {posts.map((post) => (
+              <IndexPost key={post.link} data={post} />
+            ))}
           </GridItem>
         </Grid>
       </Box>
