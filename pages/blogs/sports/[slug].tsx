@@ -29,7 +29,7 @@ export default function IndexPage({ source, posts }) {
 }
 
 export function getStaticPaths() {
-  const postPaths = path.join(process.cwd(), 'posts/developer')
+  const postPaths = path.join(process.cwd(), 'posts/sports')
   const globPosts = glob.sync('**/*.mdx', { cwd: postPaths })
   const paths = _.chain(globPosts)
     .map((paths) => fs.readFileSync(path.join(postPaths, paths), 'utf-8'))
@@ -43,7 +43,7 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPostsPaths = path.join(process.cwd(), 'posts/developer')
+  const allPostsPaths = path.join(process.cwd(), 'posts/sports')
   const globPosts = glob.sync('**/*.mdx', { cwd: allPostsPaths })
   const posts = _.chain(globPosts)
     .map((paths) => fs.readFileSync(path.join(allPostsPaths, paths), 'utf-8'))
@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
   const postsPath = path.join(
     process.cwd(),
     'posts',
-    'developer',
+    'sports',
     params.slug + '.mdx',
   )
   const post = fs.readFileSync(postsPath, 'utf-8')
