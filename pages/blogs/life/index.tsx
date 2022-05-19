@@ -1,4 +1,4 @@
-import { Box, Text, Grid, GridItem, Divider } from '@chakra-ui/react'
+import { Box, Text, Grid, Divider } from '@chakra-ui/react'
 import fs from 'fs'
 import path from 'path'
 import glob from 'glob'
@@ -16,7 +16,7 @@ const IndexPage = ({ posts }) => {
         <Text fontSize="5xl" fontWeight="bold" align="center">
           Life
         </Text>
-        <Box maxWidth='55%' ml='auto' mr='auto'>
+        <Box maxWidth="55%" ml="auto" mr="auto">
           <Divider border="1px" borderColor="black" />
         </Box>
       </Box>
