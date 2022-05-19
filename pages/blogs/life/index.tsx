@@ -1,4 +1,4 @@
-import { Box, Text, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Text, Grid, GridItem, Divider } from '@chakra-ui/react'
 import fs from 'fs'
 import path from 'path'
 import glob from 'glob'
@@ -12,18 +12,19 @@ const IndexPage = ({ posts }) => {
   return (
     <Box>
       <Nav />
-      <Box padding="50px">
-        <Grid templateColumns="repeat(5, 1fr)" gap={4}>
-          <GridItem colStart={3} rowStart={1}>
-            <Box>
-              <Text align="center">Life</Text>
-            </Box>
-          </GridItem>
-          <GridItem colStart={3} rowStart={2}>
-            {posts.map((post) => (
-              <IndexPost key={post.link} data={post} />
-            ))}
-          </GridItem>
+      <Box>
+        <Text fontSize="5xl" fontWeight="bold" align="center">
+          Life
+        </Text>
+        <Box maxWidth='55%' ml='auto' mr='auto'>
+          <Divider border="1px" borderColor="black" />
+        </Box>
+      </Box>
+      <Box padding="50px" sx={{ maxWidth: '50%', ml: 'auto', mr: 'auto' }}>
+        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+          {posts.map((post) => (
+            <IndexPost key={post.link} data={post} />
+          ))}
         </Grid>
       </Box>
       <Footer />
