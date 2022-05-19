@@ -68,16 +68,15 @@ export default function IndexPage({ posts }) {
               Recent Blogs
             </Text>
           </Box>
-          <GridItem rowStart={6} colStart={2} colEnd={4}>
-            <Box>
-              {posts.map((post) => (
-                <IndexPost key={post.link} data={post}/>
-              ))}
-            </Box>
-          </GridItem>
+        </GridItem>
+        <GridItem rowStart={6} colStart={2} colEnd={5}>
+          <Box>
+            {posts.map((post) => (
+              <IndexPost key={post.link} data={post} />
+            ))}
+          </Box>
         </GridItem>
       </Grid>
-      <Footer />
     </Box>
   )
 }
@@ -91,6 +90,6 @@ export function getStaticProps() {
     .sortBy((x) => new Date(x.date))
     .reverse()
     .value()
-  
+
   return { props: { posts } }
 }

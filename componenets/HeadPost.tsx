@@ -4,7 +4,7 @@ const HeadPost = ({ data }) => {
   return (
     <Box>
       <Box>
-        <Text>{data.title}</Text>
+        <Text fontWeight='bold'>{data.title}</Text>
           </Box>
           <Box>
               <Text>
