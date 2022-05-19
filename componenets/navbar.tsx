@@ -23,7 +23,7 @@ const Nav = () => {
               <a>
                 <Image
                   alt="logo"
-                  src="../harden.jpg"
+                  src="../../harden.jpg"
                   borderRadius="full"
                   boxSize="65px"
                   objectFit="cover"

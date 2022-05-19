@@ -1,9 +1,15 @@
-import { Box, Text, Grid, GridItem, Divider, } from '@chakra-ui/react'
+import { Box, Text, Grid, GridItem, Divider } from '@chakra-ui/react'
 import Link from 'next/link'
 import Footer from '../../componenets/footer'
 import Nav from '../../componenets/navbar'
+import IndexPost from '../../componenets/IndexPost'
+import glob from 'glob'
+import path from 'path'
+import _ from 'lodash'
+import fs from 'fs'
+import matter from 'gray-matter'
 
-const BlogsIndex = () => {
+export default function IndexPage({ posts }) {
   return (
     <Box>
       <Nav />
@@ -62,9 +68,13 @@ const BlogsIndex = () => {
               Recent Blogs
             </Text>
           </Box>
-          <Box>
-            <Text>This is where any recent blog will go</Text>
-          </Box>
+          <GridItem rowStart={6} colStart={2} colEnd={4}>
+            <Box>
+              {posts.map((post) => (
+                <IndexPost key={post.link} data={post}/>
+              ))}
+            </Box>
+          </GridItem>
         </GridItem>
       </Grid>
       <Footer />
@@ -72,4 +82,15 @@ const BlogsIndex = () => {
   )
 }
 
-export default BlogsIndex
+export function getStaticProps() {
+  const postPaths = path.join(process.cwd(), 'posts')
+  const globPosts = glob.sync('**/*.mdx', { cwd: postPaths })
+  const posts = _.chain(globPosts)
+    .map((paths) => fs.readFileSync(path.join(postPaths, paths), 'utf-8'))
+    .map((x) => matter(x).data)
+    .sortBy((x) => new Date(x.date))
+    .reverse()
+    .value()
+  
+  return { props: { posts } }
+}
