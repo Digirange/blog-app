@@ -5,6 +5,10 @@ import {
   Grid,
   GridItem,
   Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -12,10 +16,11 @@ import {
   Image,
 } from '@chakra-ui/react'
 import Link from 'next/link'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, ChevronUpIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <Box>
@@ -34,16 +39,37 @@ const Nav = () => {
                 </a>
               </Link>
             </Box>
-            <Box padding='15px'>
+            <Box padding="15px">
               <Link href="/aboutme">About Me</Link>
             </Box>
-            <Box padding='15px'>
+            <Box padding="15px">
               <Link href="/projects">Projects</Link>
             </Box>
-            <Box padding='15px'>
-              <Link href="/blogs">Blogs</Link>
+            <Box padding="15px">
+              <Menu isOpen={isOpen}>
+                <MenuButton
+                  variant="ghost"
+                  mx={1}
+                  py={[1, 2, 2]}
+                  px={4}
+                  borderRadius={5}
+                  _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
+                  aria-label="Courses"
+                  fontWeight="normal"
+                  onMouseEnter={onOpen}
+                  onMouseLeave={onClose}
+                >
+                  Blogs {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                </MenuButton>
+                <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
+                  <MenuItem>Menu Item 1</MenuItem>
+                  <MenuItem>Menu Item 2</MenuItem>
+                  <MenuItem>Menu Item 3</MenuItem>
+                </MenuList>
+              </Menu>
+              {/* <Link href="/blogs">Blogs</Link> */}
             </Box>
-            <Box padding='15px'>
+            <Box padding="15px">
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
