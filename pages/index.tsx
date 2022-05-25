@@ -3,8 +3,14 @@ import { EmailIcon, LinkIcon } from '@chakra-ui/icons'
 import { Button, ButtonGroup, Image, Divider } from '@chakra-ui/react'
 import Footer from '../componenets/footer'
 import Nav from '../componenets/navbar'
+import path from 'path'
+import glob from 'glob'
+import fs from 'fs'
+import matter from 'gray-matter'
+import _ from 'lodash'
+import IndexPost from '../componenets/IndexPost'
 
-const Home = () => {
+const Home = ({ posts }) => {
   return (
     <Box>
       <Nav />
@@ -78,13 +84,28 @@ const Home = () => {
             <Text align="center" fontWeight="bold" fontSize="3xl">
               Recent Blogs
             </Text>
-            <Text align="center">Recent Posts will go here</Text>
+            {posts.map((post) => (
+              <IndexPost key={post.link} data={post} />
+            ))}
           </GridItem>
         </Grid>
       </Box>
       <Footer />
     </Box>
   )
+}
+
+export function getStaticProps() {
+  const postPaths = path.join(process.cwd(), 'posts')
+  const globPosts = glob.sync('**/*.mdx', { cwd: postPaths })
+  const posts = _.chain(globPosts)
+    .map((paths) => fs.readFileSync(path.join(postPaths, paths), 'utf-8'))
+    .map((x) => matter(x).data)
+    .sortBy((x) => new Date(x.date))
+    .reverse()
+    .value()
+
+  return { props: { posts } }
 }
 
 export default Home
