@@ -2,6 +2,8 @@ import { ReactNode } from 'react'
 import {
   Box,
   Flex,
+  Grid,
+  GridItem,
   Button,
   useDisclosure,
   useColorModeValue,
@@ -16,34 +18,38 @@ const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>
-            <Link href="/">
-              <a>
-                <Image
-                  alt="logo"
-                  src="../../harden.jpg"
-                  borderRadius="full"
-                  boxSize="65px"
-                  objectFit="cover"
-                />
-              </a>
-            </Link>
-          </Box>
-          <Box>
-            <Link href="/aboutme">About Me</Link>
-          </Box>
-          <Box>
-            <Link href="/projects">Projects</Link>
-          </Box>
-          <Box>
-            <Link href="/blogs">Blogs</Link>
-          </Box>
-          <Button onClick={toggleColorMode}>
-            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-          </Button>
-        </Flex>
+      <Box>
+        <Box bg={useColorModeValue('gray.100', 'gray.900')}>
+          <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+            <Box>
+              <Link href="/">
+                <a>
+                  <Image
+                    alt="logo"
+                    src="../../harden.jpg"
+                    borderRadius="full"
+                    boxSize="65px"
+                    objectFit="cover"
+                  />
+                </a>
+              </Link>
+            </Box>
+            <Box padding='15px'>
+              <Link href="/aboutme">About Me</Link>
+            </Box>
+            <Box padding='15px'>
+              <Link href="/projects">Projects</Link>
+            </Box>
+            <Box padding='15px'>
+              <Link href="/blogs">Blogs</Link>
+            </Box>
+            <Box padding='15px'>
+              <Button onClick={toggleColorMode}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              </Button>
+            </Box>
+          </Grid>
+        </Box>
       </Box>
     </>
   )

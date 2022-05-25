@@ -19,12 +19,12 @@ const Footer = () => (
         bottom: 0,
         position: 'absolute',
         width: '100%',
-        height: '3rem',
+        height: '50px',
       }}
       bg={useColorModeValue('gray.100', 'gray.900')}
       paddingLeft="20px"
     >
-      <Grid templateColumns="repeat(5, 1fr)" gap={100}>
+      <Grid templateColumns="repeat(5, 1fr)" gap={4}>
         <GridItem colStart={2} colEnd={3}>
           <Box padding="10px">
             <Link href="/aboutme">About Me</Link>
