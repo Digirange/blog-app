@@ -10,7 +10,7 @@ import _ from 'lodash'
 
 const IndexPage = ({ posts }) => {
   return (
-    <Box>
+    <Box minHeight='100vh' position='relative'>
       <Nav />
       <Box>
         <Text fontSize="5xl" fontWeight="bold" align="center">

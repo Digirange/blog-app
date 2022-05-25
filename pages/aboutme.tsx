@@ -12,7 +12,7 @@ import Nav from '../componenets/navbar'
 
 const AboutMe = () => {
   return (
-    <Box>
+    <Box minHeight='100vh' position='relative'>
       <Nav />
       <Box
         sx={{
