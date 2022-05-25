@@ -62,9 +62,9 @@ const Nav = () => {
                   Blogs {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
                 </MenuButton>
                 <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-                  <MenuItem>Menu Item 1</MenuItem>
-                  <MenuItem>Menu Item 2</MenuItem>
-                  <MenuItem>Menu Item 3</MenuItem>
+                  <MenuItem>Developer</MenuItem>
+                  <MenuItem>Life</MenuItem>
+                  <MenuItem>Sports</MenuItem>
                 </MenuList>
               </Menu>
               {/* <Link href="/blogs">Blogs</Link> */}
