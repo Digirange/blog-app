@@ -3,6 +3,8 @@ import {
   ButtonGroup,
   Center,
   Flex,
+  Grid,
+  GridItem,
   IconButton,
   Link,
   useColorModeValue,
@@ -10,49 +12,6 @@ import {
 import * as React from 'react'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
-// const Footer = () => (
-//   <Center bg={useColorModeValue('gray.100', 'gray.900')} sx={{
-//         position: 'fixed',
-//         left: 0,
-//         bottom: 0,
-//         right: 0
-//       }}>
-//     <Box px={4} width="50%">
-//       <Flex
-//         justifyContent="space-evenly"
-//         paddingBottom="10px"
-//         alignItems="center"
-//         h={16}
-//       >
-// <Box>
-//   <Link href="/aboutme">About Me</Link>
-// </Box>
-// <Box>
-//   <Link href="/projects">Projects</Link>
-// </Box>
-// <Box>
-//   <Link href="/blogs">Blogs</Link>
-// </Box>
-// <Box>
-//   <ButtonGroup variant="ghost">
-//     <IconButton
-//       as="a"
-//       href="https://www.linkedin.com/in/marques-stewart-160485192/"
-//       aria-label="LinkedIn"
-//       icon={<FaLinkedin fontSize="1.25rem" />}
-//     />
-//     <IconButton
-//       as="a"
-//       href="https://github.com/Digirange"
-//       aria-label="GitHub"
-//       icon={<FaGithub fontSize="1.25rem" />}
-//     />
-//   </ButtonGroup>
-// </Box>
-//       </Flex>
-//     </Box>
-//   </Center>
-// )
 const Footer = () => (
   <Box>
     <Box
@@ -60,36 +19,46 @@ const Footer = () => (
         bottom: 0,
         position: 'absolute',
         width: '100%',
+        height: '3rem',
       }}
       bg={useColorModeValue('gray.100', 'gray.900')}
+      paddingLeft="20px"
     >
-      <Flex h={16} alignItems={'center'} justifyContent={'space-around'}>
-        <Box>
-          <Link href="/aboutme">About Me</Link>
-        </Box>
-        <Box>
-          <Link href="/projects">Projects</Link>
-        </Box>
-        <Box>
-          <Link href="/blogs">Blogs</Link>
-        </Box>
-        <Box>
-          <ButtonGroup variant="ghost">
-            <IconButton
-              as="a"
-              href="https://www.linkedin.com/in/marques-stewart-160485192/"
-              aria-label="LinkedIn"
-              icon={<FaLinkedin fontSize="1.25rem" />}
-            />
-            <IconButton
-              as="a"
-              href="https://github.com/Digirange"
-              aria-label="GitHub"
-              icon={<FaGithub fontSize="1.25rem" />}
-            />
-          </ButtonGroup>
-        </Box>
-      </Flex>
+      <Grid templateColumns="repeat(5, 1fr)" gap={100}>
+        <GridItem colStart={2} colEnd={3}>
+          <Box padding="10px">
+            <Link href="/aboutme">About Me</Link>
+          </Box>
+        </GridItem>
+        <GridItem colStart={3}>
+          <Box padding="10px">
+            <Link href="/projects">Projects</Link>
+          </Box>
+        </GridItem>
+        <GridItem colStart={4}>
+          <Box padding="10px">
+            <Link href="/blogs">Blogs</Link>
+          </Box>
+        </GridItem>
+        <GridItem colStart={5}>
+          <Box padding="10px">
+            <ButtonGroup variant="ghost">
+              <IconButton
+                as="a"
+                href="https://www.linkedin.com/in/marques-stewart-160485192/"
+                aria-label="LinkedIn"
+                icon={<FaLinkedin fontSize="1.25rem" />}
+              />
+              <IconButton
+                as="a"
+                href="https://github.com/Digirange"
+                aria-label="GitHub"
+                icon={<FaGithub fontSize="1.25rem" />}
+              />
+            </ButtonGroup>
+          </Box>
+        </GridItem>
+      </Grid>
     </Box>
   </Box>
 )
