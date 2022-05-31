@@ -6,8 +6,8 @@ const Projects = () => {
   return (
     <Box>
       <Nav />
-      <Box padding='100px'>
-        <Text>
+      <Box padding='100px' bg='Gray'>
+        <Text textColor='white'>
           test
         </Text>
       </Box>
