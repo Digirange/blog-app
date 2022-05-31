@@ -16,7 +16,12 @@ import {
   Image,
 } from '@chakra-ui/react'
 import Link from 'next/link'
-import { ChevronDownIcon, ChevronUpIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  MoonIcon,
+  SunIcon,
+} from '@chakra-ui/icons'
 
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -58,13 +63,15 @@ const Nav = () => {
                   fontWeight="normal"
                   onMouseEnter={onOpen}
                   onMouseLeave={onClose}
+                  as="a"
+                  href="/blogs"
                 >
                   Blogs {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
                 </MenuButton>
                 <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-                  <MenuItem>Developer</MenuItem>
-                  <MenuItem>Life</MenuItem>
-                  <MenuItem>Sports</MenuItem>
+                  <MenuItem as='a' href='/blogs/developer'>Developer</MenuItem>
+                  <MenuItem as='a' href='/blogs/life'>Life</MenuItem>
+                  <MenuItem as='a' href='/blogs/sports'>Sports</MenuItem>
                 </MenuList>
               </Menu>
               {/* <Link href="/blogs">Blogs</Link> */}

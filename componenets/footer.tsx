@@ -17,9 +17,9 @@ const Footer = () => (
     <Box
       sx={{
         bottom: 0,
-        position: 'absolute',
+        position: 'fixed',
         width: '100%',
-        height: '50px',
+        height: '40px',
       }}
       bg={useColorModeValue('gray.100', 'gray.900')}
       paddingLeft="20px"
