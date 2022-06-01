@@ -19,7 +19,7 @@ const Footer = () => (
         bottom: 0,
         position: 'absolute',
         width: '100%',
-        height: '40px',
+        height: '50px',
       }}
       bg={useColorModeValue('gray.100', 'gray.900')}
       paddingLeft="20px"
