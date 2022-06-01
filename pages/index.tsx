@@ -12,7 +12,7 @@ import IndexPost from '../componenets/IndexPost'
 
 const Home = ({ posts }) => {
   return (
-    <Box>
+    <Box minHeight="100vh" position="relative">
       <Nav />
       <Box padding="50px">
         <Grid templateColumns="repeat(5, 1fr)" gap={4}>

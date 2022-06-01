@@ -15,7 +15,7 @@ export default function IndexPage({ source, posts }) {
   } = source
   const components = { Heading }
   return (
-    <Box>
+    <Box minHeight='100vh' position='relative'>
       <Nav />
       <Box padding="50px" className="postBox">
         <Grid templateColumns="repeat(5, 1fr)" gap={4}>
