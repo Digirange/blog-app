@@ -45,24 +45,24 @@ const Home = ({ posts }) => {
                     href="/aboutme"
                     rightIcon={<LinkIcon />}
                     _hover={{
-                      background: 'gray.400',
+                      background: 'white',
                     }}
-                    color="white"
-                    bg="gray.600"
+                    color="gray.550"
+                    bg="green.550"
                   >
-                    Learn More About Me
+                    <Text color="gray.550">Learn More About Me</Text>
                   </Button>
                   <Button
                     as="a"
                     href="/contactme"
                     rightIcon={<EmailIcon />}
                     _hover={{
-                      background: 'gray.400',
+                      background: 'white',
                     }}
-                    color="white"
-                    bg="gray.600"
+                    color="gray.550"
+                    bg="green.550"
                   >
-                    Contact Me
+                    <Text color="gray.550">Contact Me</Text>
                   </Button>
                 </ButtonGroup>
               </Box>

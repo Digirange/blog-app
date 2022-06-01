@@ -12,7 +12,7 @@ const IndexPost = ({ data }) => {
             color: 'black',
           }}
           sx={{
-            color: 'green',
+            color: 'green.500',
           }}
         >
           Read More...
