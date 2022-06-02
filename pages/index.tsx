@@ -1,6 +1,20 @@
 import { Box, Grid, GridItem, Link, Text } from '@chakra-ui/layout'
 import { EmailIcon, LinkIcon } from '@chakra-ui/icons'
-import { Button, ButtonGroup, Image, Divider } from '@chakra-ui/react'
+import {
+  Button,
+  ButtonGroup,
+  Image,
+  Divider,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  ModalFooter,
+  IconButton,
+} from '@chakra-ui/react'
 import Footer from '../componenets/footer'
 import Nav from '../componenets/navbar'
 import path from 'path'
@@ -9,8 +23,11 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import _ from 'lodash'
 import IndexPost from '../componenets/IndexPost'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Home = ({ posts }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <Box minHeight="100vh" position="relative">
       <Nav />
@@ -52,7 +69,70 @@ const Home = ({ posts }) => {
                   >
                     <Text color="gray.550">Learn More About Me</Text>
                   </Button>
-                  <Button
+                  <Button onClick={onOpen}>Open Modal</Button>
+
+                  <Modal isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Need to get in contact with me?</ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        <Box paddingTop="20px">
+                          <Text fontWeight="bold">
+                            Email - MStewWebDev@Gmail.com
+                          </Text>
+                        </Box>
+                        <Box display="flex" paddingTop="60px">
+                          <Box
+                            _hover={{
+                              cursor: 'pointer',
+                            }}
+                          >
+                            <Box paddingTop="5px">
+                              <Link href="https://github.com/digirange">
+                                <Text fontWeight="bold">GitHub -</Text>
+                              </Link>
+                            </Box>
+                          </Box>
+                          <Box paddingLeft="8px">
+                            <IconButton
+                              as="a"
+                              href="https://github.com/Digirange"
+                              aria-label="GitHub"
+                              icon={<FaGithub fontSize="1.25rem" />}
+                            />
+                          </Box>
+                        </Box>
+                        <Box display="flex" paddingTop="60px">
+                          <Box
+                            _hover={{
+                              cursor: 'pointer',
+                            }}
+                          >
+                            <Box paddingTop="8px">
+                              <Link href="https://www.linkedin.com/in/marques-stewart-160485192/">
+                                <Text fontWeight="bold">Linkedin -</Text>
+                              </Link>
+                            </Box>
+                          </Box>
+                          <Box paddingLeft="8px">
+                            <IconButton
+                              as="a"
+                              href="https://www.linkedin.com/in/marques-stewart-160485192/"
+                              aria-label="LinkedIn"
+                              icon={<FaLinkedin fontSize="1.25rem" />}
+                            />
+                          </Box>
+                        </Box>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
+                  {/* <Button
                     as="a"
                     href="/contactme"
                     rightIcon={<EmailIcon />}
@@ -63,7 +143,7 @@ const Home = ({ posts }) => {
                     bg="green.550"
                   >
                     <Text color="gray.550">Contact Me</Text>
-                  </Button>
+                  </Button> */}
                 </ButtonGroup>
               </Box>
             </Box>
