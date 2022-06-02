@@ -72,7 +72,7 @@ const Home = ({ posts }) => {
                   <Button onClick={onOpen} rightIcon={<EmailIcon />} bg='green.550' color='gray.550'>
                     Contact Me
                   </Button>
-                  <Modal isOpen={isOpen} onClose={onClose}>
+                  <Modal isOpen={isOpen} onClose={onClose} isCentered>
                     <ModalOverlay />
                     <ModalContent>
                       <ModalHeader>Need to get in contact with me?</ModalHeader>
