@@ -69,8 +69,9 @@ const Home = ({ posts }) => {
                   >
                     <Text color="gray.550">Learn More About Me</Text>
                   </Button>
-                  <Button onClick={onOpen}>Open Modal</Button>
-
+                  <Button onClick={onOpen} rightIcon={<EmailIcon />} bg='green.550' color='gray.550'>
+                    Contact Me
+                  </Button>
                   <Modal isOpen={isOpen} onClose={onClose}>
                     <ModalOverlay />
                     <ModalContent>
@@ -132,18 +133,6 @@ const Home = ({ posts }) => {
                       </ModalFooter>
                     </ModalContent>
                   </Modal>
-                  {/* <Button
-                    as="a"
-                    href="/contactme"
-                    rightIcon={<EmailIcon />}
-                    _hover={{
-                      background: 'white',
-                    }}
-                    color="gray.550"
-                    bg="green.550"
-                  >
-                    <Text color="gray.550">Contact Me</Text>
-                  </Button> */}
                 </ButtonGroup>
               </Box>
             </Box>
