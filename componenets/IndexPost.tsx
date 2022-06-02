@@ -1,21 +1,20 @@
-import { Box, Link } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 import HeadPost from './HeadPost'
+import Link from 'next/link'
 
 const IndexPost = ({ data }) => {
   return (
     <Box paddingBottom="20px">
       <article>
         <HeadPost data={data} />
-        <Link
-          href={'/blogs' + data.root + data.url}
-          _hover={{
+        <Link href={'/blogs' + data.root + data.url}>
+          <Text color='green.500' _hover={{
             color: 'black',
+            cursor: 'pointer'
           }}
-          sx={{
-            color: 'green.500',
-          }}
-        >
-          Read More...
+          >
+            Read More ...
+         </Text>
         </Link>
       </article>
     </Box>
