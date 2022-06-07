@@ -8,7 +8,7 @@ const IndexPost = ({ data }) => {
       <article>
         <HeadPost data={data} />
         <Link href={'/blogs' + data.root + data.url}>
-          <Text color='green.500' _hover={{
+          <Text color='green.600' _hover={{
             color: 'black',
             cursor: 'pointer'
           }}

@@ -1,4 +1,4 @@
-import { Box, Text, Grid, GridItem, Divider } from '@chakra-ui/react'
+import { Box, Text, Grid, GridItem, Divider, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import Footer from '../../componenets/footer'
 import Nav from '../../componenets/navbar'
@@ -72,7 +72,7 @@ export default function IndexPage({ posts }) {
         <GridItem rowStart={6} colStart={2} colEnd={5}>
           <Box>
             {posts.map((post) => (
-              <IndexPost key={post.link} data={post} />
+                <IndexPost key={post.link} data={post} />
             ))}
           </Box>
         </GridItem>

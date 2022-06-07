@@ -3,7 +3,7 @@ import fs from 'fs'
 import _ from 'lodash'
 import path from 'path'
 import matter from 'gray-matter'
-import { Box, Text, Grid, GridItem, Heading } from '@chakra-ui/react'
+import { Box, Text, Grid, GridItem, Heading, Image } from '@chakra-ui/react'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Nav from '../../../componenets/navbar'
@@ -11,13 +11,13 @@ import Footer from '../../../componenets/footer'
 
 export default function IndexPage({ source, posts }) {
   const {
-    scope: { title, description, url, date },
+    scope: { title, description, url, date, tag },
   } = source
-  const components = { Heading }
+  const components = { Heading, Text, Image, Box }
   return (
     <Box minHeight='100vh' position='relative'>
       <Nav />
-      <Box padding="50px" className="postBox">
+      <Box padding="50px">
         <Grid templateColumns="repeat(5, 1fr)" gap={4}>
           <GridItem colStart={2} colEnd={5}>
             <MDXRemote {...source} components={components} />
