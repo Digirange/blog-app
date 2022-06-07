@@ -172,6 +172,7 @@ export function getStaticProps() {
     .map((x) => matter(x).data)
     .sortBy((x) => new Date(x.date))
     .reverse()
+    .slice(0, 3)
     .value()
 
   return { props: { posts } }
