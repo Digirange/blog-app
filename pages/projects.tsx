@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import  Footer  from '../componenets/footer'
-import Nav from '../componenets/navbar'
+import  Footer  from '../components/footer'
+import Nav from '../components/navbar'
 
 const Projects = () => {
   return (

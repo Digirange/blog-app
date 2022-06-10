@@ -7,12 +7,11 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react'
-import  Footer  from '../componenets/footer'
-import Nav from '../componenets/navbar'
+import Nav from '../components/navbar'
 
 const AboutMe = () => {
   return (
-    <Box minHeight='100vh' position='relative'>
+    <Box minHeight="100vh" position="relative">
       <Nav />
       <Box
         sx={{
@@ -82,8 +81,6 @@ const AboutMe = () => {
           </Box>
         </Flex>
       </Box>
-
-
     </Box>
   )
 }

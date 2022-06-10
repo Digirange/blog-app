@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 
 
-const IndexPost = ({ data }) => {
+const IndexPost = ({ data }: any) => {
   const greenColor = useColorModeValue('green.700', 'green.400')
   return (
     <Box paddingBottom="20px">

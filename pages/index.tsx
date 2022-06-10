@@ -16,13 +16,13 @@ import {
   IconButton,
   useColorModeValue,
 } from '@chakra-ui/react'
-import Nav from '../componenets/navbar'
+import Nav from '../components/navbar'
 import path from 'path'
 import glob from 'glob'
 import fs from 'fs'
 import matter from 'gray-matter'
 import _ from 'lodash'
-import IndexPost from '../componenets/IndexPost'
+import IndexPost from '../components/IndexPost'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Home = ({ posts }) => {

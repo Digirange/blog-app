@@ -6,7 +6,7 @@ import matter from 'gray-matter'
 import { Box, Text, Grid, GridItem, Heading, Image } from '@chakra-ui/react'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-import Nav from '../../../componenets/navbar'
+import Nav from '../../../components/navbar'
 
 
 export default function IndexPage({ source, posts }) {

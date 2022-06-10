@@ -64,7 +64,6 @@ const Nav = () => {
               <Box padding="15px">
                 <Menu isOpen={isOpen}>
                   <MenuButton
-                    variant="ghost"
                     mx={1}
                     py={[1, 2, 2]}
                     px={4}

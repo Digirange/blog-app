@@ -3,12 +3,12 @@ import fs from 'fs'
 import path from 'path'
 import glob from 'glob'
 import matter from 'gray-matter'
-import IndexPost from '../../../componenets/IndexPost'
+import IndexPost from '../../../components/IndexPost'
 
-import Nav from '../../../componenets/navbar'
+import Nav from '../../../components/navbar'
 import _ from 'lodash'
 
-const IndexPage = ({ posts }) => {
+const IndexPage = ({ posts }: any) => {
   return (
     <Box minHeight='100vh' position='relative'>
       <Nav />
@@ -22,7 +22,7 @@ const IndexPage = ({ posts }) => {
       </Box>
       <Box padding="50px" sx={{ maxWidth: '50%', ml: 'auto', mr: 'auto' }}>
         <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {posts.map((post) => (
+          {posts.map((post: any) => (
             <IndexPost key={post.link} data={post} />
           ))}
         </Grid>

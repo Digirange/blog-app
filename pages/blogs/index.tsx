@@ -1,8 +1,8 @@
 import { Box, Text, Grid, GridItem, Divider, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 
-import Nav from '../../componenets/navbar'
-import IndexPost from '../../componenets/IndexPost'
+import Nav from '../../components/navbar'
+import IndexPost from '../../components/IndexPost'
 import glob from 'glob'
 import path from 'path'
 import _ from 'lodash'
