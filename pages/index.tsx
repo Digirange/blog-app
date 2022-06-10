@@ -25,7 +25,7 @@ import _ from 'lodash'
 import IndexPost from '../components/IndexPost'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
-const Home = ({ posts }) => {
+const Home = ({ posts }: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const greenColor = useColorModeValue('green.700', 'green.400')
 
