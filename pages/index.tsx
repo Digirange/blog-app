@@ -183,7 +183,7 @@ const Home = ({ posts }: any) => {
             <Text align="center" fontWeight="bold" fontSize="3xl">
               Recent Blogs
             </Text>
-            {posts.map((post) => (
+            {posts.map((post: any) => (
               <IndexPost key={post.link} data={post} />
             ))}
           </GridItem>

@@ -9,7 +9,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import Nav from '../../../components/navbar'
 
 
-export default function IndexPage({ source, posts }) {
+export default function IndexPage({ source, posts }: any) {
   const {
     scope: { title, description, url, date, tag },
   } = source
@@ -43,7 +43,7 @@ export function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const allPostsPaths = path.join(process.cwd(), 'posts/life')
   const globPosts = glob.sync('**/*.mdx', { cwd: allPostsPaths })
   const posts = _.chain(globPosts)

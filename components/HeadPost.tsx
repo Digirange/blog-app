@@ -1,6 +1,6 @@
 import { Box, Text, useColorModeValue } from '@chakra-ui/react'
 
-const HeadPost = ({ data }) => {
+const HeadPost = ({ data }: any) => {
   const greenColor = useColorModeValue('green.700', 'green.400')
   return (
     <Box>

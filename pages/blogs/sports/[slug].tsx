@@ -9,7 +9,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import Nav from '../../../components/navbar'
 
 
-export default function IndexPage({ source, posts }) {
+export default function IndexPage({ source, posts }: any) {
   const {
     scope: { title, description, url, date },
   } = source
@@ -23,7 +23,6 @@ export default function IndexPage({ source, posts }) {
           </GridItem>
         </Grid>
           </Box>
-          <Footer/>
     </Box>
   )
 }
@@ -42,7 +41,7 @@ export function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const allPostsPaths = path.join(process.cwd(), 'posts/sports')
   const globPosts = glob.sync('**/*.mdx', { cwd: allPostsPaths })
   const posts = _.chain(globPosts)

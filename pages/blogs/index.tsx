@@ -9,7 +9,7 @@ import _ from 'lodash'
 import fs from 'fs'
 import matter from 'gray-matter'
 
-export default function IndexPage({ posts }) {
+export default function IndexPage({ posts }: any) {
   return (
     <Box>
       <Nav />
@@ -71,7 +71,7 @@ export default function IndexPage({ posts }) {
         </GridItem>
         <GridItem rowStart={6} colStart={2} colEnd={5}>
           <Box>
-            {posts.map((post) => (
+            {posts.map((post: any) => (
                 <IndexPost key={post.link} data={post} />
             ))}
           </Box>
