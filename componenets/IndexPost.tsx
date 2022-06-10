@@ -1,20 +1,25 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Text, useColorModeValue } from '@chakra-ui/react'
 import HeadPost from './HeadPost'
 import Link from 'next/link'
 
+
+
 const IndexPost = ({ data }) => {
+  const greenColor = useColorModeValue('green.700', 'green.400')
   return (
     <Box paddingBottom="20px">
       <article>
         <HeadPost data={data} />
         <Link href={'/blogs' + data.root + data.url}>
-          <Text color='green.600' _hover={{
-            color: 'black',
-            cursor: 'pointer'
-          }}
+          <Text
+            color={greenColor}
+            _hover={{
+              color: 'black',
+              cursor: 'pointer',
+            }}
           >
             Read More ...
-         </Text>
+          </Text>
         </Link>
       </article>
     </Box>

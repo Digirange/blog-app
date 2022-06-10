@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
 import {
   Box,
   Grid,
   GridItem,
   Button,
   Menu,
+  Text,
   MenuButton,
   MenuList,
   MenuItem,
@@ -24,6 +24,7 @@ import {
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const greenColor = useColorModeValue('green.700', 'green.400')
   return (
     <>
       <Box>
@@ -31,7 +32,16 @@ const Nav = () => {
           <Grid templateColumns="repeat(4, 1fr)" gap={4}>
             <GridItem colStart={2}>
               <Box padding="15px">
-                <Link href="/aboutme">About Me</Link>
+                <Link href="/aboutme">
+                  <Text
+                    _hover={{
+                      cursor: 'pointer',
+                      color: greenColor
+                    }}
+                  >
+                    About Me
+                  </Text>
+                </Link>
               </Box>
             </GridItem>
             <GridItem colStart={3}>
@@ -58,7 +68,6 @@ const Nav = () => {
                     py={[1, 2, 2]}
                     px={4}
                     borderRadius={5}
-                    _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
                     aria-label="Courses"
                     fontWeight="normal"
                     onMouseEnter={onOpen}

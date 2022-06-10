@@ -14,6 +14,7 @@ import {
   ModalCloseButton,
   ModalFooter,
   IconButton,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import Footer from '../componenets/footer'
 import Nav from '../componenets/navbar'
@@ -27,6 +28,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Home = ({ posts }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const greenColor = useColorModeValue('green.700', 'green.400')
 
   return (
     <Box minHeight="100vh" position="relative">
@@ -61,18 +63,15 @@ const Home = ({ posts }) => {
                     as="a"
                     href="/aboutme"
                     rightIcon={<LinkIcon />}
-                    _hover={{
-                      background: 'white',
-                    }}
                     color="gray.550"
-                    bg="green.550"
+                    bg={greenColor}
                   >
                     <Text color="gray.550">Learn More About Me</Text>
                   </Button>
                   <Button
                     onClick={onOpen}
                     rightIcon={<EmailIcon />}
-                    bg="green.550"
+                    bg={greenColor}
                     color="gray.550"
                   >
                     Contact Me
@@ -102,7 +101,7 @@ const Home = ({ posts }) => {
                           </Box>
                           <Box paddingLeft="8px">
                             <IconButton
-                              className='gitButton'
+                              color={greenColor}
                               as="a"
                               href="https://github.com/Digirange"
                               aria-label="GitHub"
@@ -125,6 +124,7 @@ const Home = ({ posts }) => {
                           <Box paddingLeft="8px">
                             <IconButton
                               as="a"
+                              color={greenColor}
                               href="https://www.linkedin.com/in/marques-stewart-160485192/"
                               aria-label="LinkedIn"
                               icon={<FaLinkedin fontSize="1.25rem" />}
@@ -140,15 +140,24 @@ const Home = ({ posts }) => {
                     </ModalContent>
                   </Modal>
                 </ButtonGroup>
-                <Box width='8%' ml='auto' mr='auto' display='flex' paddingTop='15px' height='5px'>
-                  <ButtonGroup variant="ghost" spacing='6'>
+                <Box
+                  width="8%"
+                  ml="auto"
+                  mr="auto"
+                  display="flex"
+                  paddingTop="15px"
+                  height="5px"
+                >
+                  <ButtonGroup variant="ghost" spacing="6">
                     <IconButton
+                      color={greenColor}
                       as="a"
                       href="https://www.linkedin.com/in/marques-stewart-160485192/"
                       aria-label="LinkedIn"
                       icon={<FaLinkedin fontSize="2rem" />}
                     />
                     <IconButton
+                      color={greenColor}
                       as="a"
                       href="https://github.com/Digirange"
                       aria-label="GitHub"
