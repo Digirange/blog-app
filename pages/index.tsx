@@ -69,7 +69,12 @@ const Home = ({ posts }) => {
                   >
                     <Text color="gray.550">Learn More About Me</Text>
                   </Button>
-                  <Button onClick={onOpen} rightIcon={<EmailIcon />} bg='green.550' color='gray.550'>
+                  <Button
+                    onClick={onOpen}
+                    rightIcon={<EmailIcon />}
+                    bg="green.550"
+                    color="gray.550"
+                  >
                     Contact Me
                   </Button>
                   <Modal isOpen={isOpen} onClose={onClose} isCentered>
@@ -97,6 +102,7 @@ const Home = ({ posts }) => {
                           </Box>
                           <Box paddingLeft="8px">
                             <IconButton
+                              className='gitButton'
                               as="a"
                               href="https://github.com/Digirange"
                               aria-label="GitHub"
@@ -134,6 +140,22 @@ const Home = ({ posts }) => {
                     </ModalContent>
                   </Modal>
                 </ButtonGroup>
+                <Box width='8%' ml='auto' mr='auto' display='flex' paddingTop='15px' height='5px'>
+                  <ButtonGroup variant="ghost" spacing='6'>
+                    <IconButton
+                      as="a"
+                      href="https://www.linkedin.com/in/marques-stewart-160485192/"
+                      aria-label="LinkedIn"
+                      icon={<FaLinkedin fontSize="2rem" />}
+                    />
+                    <IconButton
+                      as="a"
+                      href="https://github.com/Digirange"
+                      aria-label="GitHub"
+                      icon={<FaGithub fontSize="2rem" />}
+                    />
+                  </ButtonGroup>
+                </Box>
               </Box>
             </Box>
           </GridItem>
@@ -159,7 +181,7 @@ const Home = ({ posts }) => {
           </GridItem>
         </Grid>
       </Box>
-      <Footer />
+      {/* <Footer /> */}
     </Box>
   )
 }
