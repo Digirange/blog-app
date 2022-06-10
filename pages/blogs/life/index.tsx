@@ -4,7 +4,7 @@ import path from 'path'
 import glob from 'glob'
 import matter from 'gray-matter'
 import IndexPost from '../../../componenets/IndexPost'
-import Footer from '../../../componenets/footer'
+
 import Nav from '../../../componenets/navbar'
 import _ from 'lodash'
 
@@ -27,7 +27,7 @@ const IndexPage = ({ posts }) => {
           ))}
         </Grid>
       </Box>
-      <Footer />
+
     </Box>
   )
 }

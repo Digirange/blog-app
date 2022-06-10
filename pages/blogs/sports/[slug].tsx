@@ -7,7 +7,7 @@ import { Box, Text, Grid, GridItem } from '@chakra-ui/react'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Nav from '../../../componenets/navbar'
-import Footer from '../../../componenets/footer'
+
 
 export default function IndexPage({ source, posts }) {
   const {

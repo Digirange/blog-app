@@ -16,7 +16,6 @@ import {
   IconButton,
   useColorModeValue,
 } from '@chakra-ui/react'
-import Footer from '../componenets/footer'
 import Nav from '../componenets/navbar'
 import path from 'path'
 import glob from 'glob'
@@ -190,7 +189,6 @@ const Home = ({ posts }) => {
           </GridItem>
         </Grid>
       </Box>
-      {/* <Footer /> */}
     </Box>
   )
 }

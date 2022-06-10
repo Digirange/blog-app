@@ -11,7 +11,7 @@ const Projects = () => {
           test
         </Text>
       </Box>
-        <Footer />
+
     </Box>
   )
 }

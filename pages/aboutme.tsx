@@ -83,7 +83,7 @@ const AboutMe = () => {
         </Flex>
       </Box>
 
-      <Footer />
+
     </Box>
   )
 }
