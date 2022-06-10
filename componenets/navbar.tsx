@@ -34,6 +34,7 @@ const Nav = () => {
               <Box padding="15px">
                 <Link href="/aboutme">
                   <Text
+                    fontWeight='bold'
                     _hover={{
                       cursor: 'pointer',
                       color: greenColor
@@ -69,23 +70,35 @@ const Nav = () => {
                     px={4}
                     borderRadius={5}
                     aria-label="Courses"
-                    fontWeight="normal"
+                    fontWeight="bold"
                     onMouseEnter={onOpen}
                     onMouseLeave={onClose}
                     as="a"
                     href="/blogs"
                   >
-                    Blogs {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                    <b>Blogs</b>{isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
                   </MenuButton>
                   <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
                     <MenuItem>
-                      <Link href="/blogs/developer">Developer</Link>
+                      <Link href="/blogs/developer">
+                        <Text fontWeight='bold'>
+                          Developer
+                        </Text>
+                      </Link>
                     </MenuItem>
                     <MenuItem>
-                      <Link href="/blogs/life">Life</Link>
+                      <Link href="/blogs/life">
+                        <Text fontWeight='bold'>
+                          Life
+                        </Text>
+                      </Link>
                     </MenuItem>
                     <MenuItem>
-                      <Link href="/blogs/sports">Sports</Link>
+                      <Link href="/blogs/sports">
+                        <Text fontWeight='bold'>
+                          Sports
+                        </Text>
+                      </Link>
                     </MenuItem>
                   </MenuList>
                 </Menu>
