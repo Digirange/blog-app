@@ -1,22 +1,21 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Text, useColorModeValue } from '@chakra-ui/react'
 
 const HeadPost = ({ data }) => {
+  const greenColor = useColorModeValue('green.700', 'green.400')
   return (
     <Box>
       <Box>
-        <Text fontWeight='bold'>{data.title}</Text>
-          </Box>
-          <Box>
-              <Text>
-                  { data.description }
-              </Text>
-              <Text>
-                  { data.date }
-              </Text>
-              <Text>
-                  { data.readTime + ' min read' }
-              </Text>
-          </Box>
+        <Text fontWeight="bold">{data.title}</Text>
+      </Box>
+      <Box>
+        <Text>{data.description}</Text>
+        <Box>
+          <Text>{data.date}</Text>
+          <Text color={greenColor}>#{data.tag}</Text>
+        </Box>
+
+        <Text fontWeight="bold">{data.readTime + ' min read'}</Text>
+      </Box>
     </Box>
   )
 }

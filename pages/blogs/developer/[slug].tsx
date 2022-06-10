@@ -14,7 +14,7 @@ export default function IndexPage({ source, posts }) {
     scope: { title, description, url, date },
   } = source
   return (
-    <Box>
+    <Box height='100vh'>
       <Nav />
       <Box padding='50px'>
         <Grid templateColumns="repeat(5, 1fr)" gap={4}>

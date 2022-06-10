@@ -10,7 +10,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import * as React from 'react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Footer = () => (
   <Box>
@@ -24,17 +24,17 @@ const Footer = () => (
       bg={useColorModeValue('gray.100', 'gray.900')}
       paddingLeft="20px"
     >
-      <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+      <Grid templateColumns="repeat(4, 1fr)" gap={4}>
         <GridItem colStart={2} colEnd={3}>
           <Box padding="10px">
             <Link href="/aboutme">About Me</Link>
           </Box>
         </GridItem>
-        <GridItem colStart={3}>
+        {/* <GridItem colStart={3}>
           <Box padding="10px">
             <Link href="/projects">Projects</Link>
           </Box>
-        </GridItem>
+        </GridItem> */}
         <GridItem colStart={4}>
           <Box padding="10px">
             <Link href="/blogs">Blogs</Link>

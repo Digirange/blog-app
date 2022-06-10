@@ -1,6 +1,21 @@
 import { Box, Grid, GridItem, Link, Text } from '@chakra-ui/layout'
 import { EmailIcon, LinkIcon } from '@chakra-ui/icons'
-import { Button, ButtonGroup, Image, Divider } from '@chakra-ui/react'
+import {
+  Button,
+  ButtonGroup,
+  Image,
+  Divider,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  ModalFooter,
+  IconButton,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import Footer from '../componenets/footer'
 import Nav from '../componenets/navbar'
 import path from 'path'
@@ -9,8 +24,12 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import _ from 'lodash'
 import IndexPost from '../componenets/IndexPost'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Home = ({ posts }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const greenColor = useColorModeValue('green.700', 'green.400')
+
   return (
     <Box minHeight="100vh" position="relative">
       <Nav />
@@ -44,27 +63,108 @@ const Home = ({ posts }) => {
                     as="a"
                     href="/aboutme"
                     rightIcon={<LinkIcon />}
-                    _hover={{
-                      background: 'gray.400',
-                    }}
-                    color="white"
-                    bg="gray.600"
+                    color="gray.550"
+                    bg={greenColor}
                   >
-                    Learn More About Me
+                    <Text color="gray.550">Learn More About Me</Text>
                   </Button>
                   <Button
-                    as="a"
-                    href="/contactme"
+                    onClick={onOpen}
                     rightIcon={<EmailIcon />}
-                    _hover={{
-                      background: 'gray.400',
-                    }}
-                    color="white"
-                    bg="gray.600"
+                    bg={greenColor}
+                    color="gray.550"
                   >
                     Contact Me
                   </Button>
+                  <Modal isOpen={isOpen} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Need to get in contact with me?</ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        <Box paddingTop="20px">
+                          <Text fontWeight="bold">
+                            Email - MStewWebDev@Gmail.com
+                          </Text>
+                        </Box>
+                        <Box display="flex" paddingTop="60px">
+                          <Box
+                            _hover={{
+                              cursor: 'pointer',
+                            }}
+                          >
+                            <Box paddingTop="5px">
+                              <Link href="https://github.com/digirange">
+                                <Text fontWeight="bold">GitHub -</Text>
+                              </Link>
+                            </Box>
+                          </Box>
+                          <Box paddingLeft="8px">
+                            <IconButton
+                              color={greenColor}
+                              as="a"
+                              href="https://github.com/Digirange"
+                              aria-label="GitHub"
+                              icon={<FaGithub fontSize="1.25rem" />}
+                            />
+                          </Box>
+                        </Box>
+                        <Box display="flex" paddingTop="60px">
+                          <Box
+                            _hover={{
+                              cursor: 'pointer',
+                            }}
+                          >
+                            <Box paddingTop="8px">
+                              <Link href="https://www.linkedin.com/in/marques-stewart-160485192/">
+                                <Text fontWeight="bold">Linkedin -</Text>
+                              </Link>
+                            </Box>
+                          </Box>
+                          <Box paddingLeft="8px">
+                            <IconButton
+                              as="a"
+                              color={greenColor}
+                              href="https://www.linkedin.com/in/marques-stewart-160485192/"
+                              aria-label="LinkedIn"
+                              icon={<FaLinkedin fontSize="1.25rem" />}
+                            />
+                          </Box>
+                        </Box>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
                 </ButtonGroup>
+                <Box
+                  width="8%"
+                  ml="auto"
+                  mr="auto"
+                  display="flex"
+                  paddingTop="15px"
+                  height="5px"
+                >
+                  <ButtonGroup variant="ghost" spacing="6">
+                    <IconButton
+                      color={greenColor}
+                      as="a"
+                      href="https://www.linkedin.com/in/marques-stewart-160485192/"
+                      aria-label="LinkedIn"
+                      icon={<FaLinkedin fontSize="2rem" />}
+                    />
+                    <IconButton
+                      color={greenColor}
+                      as="a"
+                      href="https://github.com/Digirange"
+                      aria-label="GitHub"
+                      icon={<FaGithub fontSize="2rem" />}
+                    />
+                  </ButtonGroup>
+                </Box>
               </Box>
             </Box>
           </GridItem>
@@ -90,7 +190,7 @@ const Home = ({ posts }) => {
           </GridItem>
         </Grid>
       </Box>
-      <Footer />
+      {/* <Footer /> */}
     </Box>
   )
 }
@@ -103,6 +203,7 @@ export function getStaticProps() {
     .map((x) => matter(x).data)
     .sortBy((x) => new Date(x.date))
     .reverse()
+    .slice(0, 3)
     .value()
 
   return { props: { posts } }
