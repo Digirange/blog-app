@@ -67,7 +67,7 @@ const AboutMe = () => {
               You can expect blog posts featuring projects I worked on, personal
               and professional goals, or just inner personal thoughts and
               opinions on a wide variety of subjects. I am glad you’re here and
-              welcome you to stay and explore! test here
+              welcome you to stay and explore!
             </Text>
           </Box>
           <Box paddingLeft="50px">
