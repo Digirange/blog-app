@@ -1,8 +1,8 @@
 import { Box, Text, useColorModeValue } from '@chakra-ui/react'
 
 const HeadPost = ({ data }: any) => {
+  const greenColor = useColorModeValue('green.700', 'green.400')
   if (data.tagTwo) {
-    const greenColor = useColorModeValue('green.700', 'green.400')
     return (
       <Box>
         <Box>
@@ -20,7 +20,6 @@ const HeadPost = ({ data }: any) => {
       </Box>
     )
   } else {
-    const greenColor = useColorModeValue('green.700', 'green.400')
     return (
       <Box>
         <Box>
