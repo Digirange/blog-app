@@ -6,16 +6,11 @@ phases:
       nodejs: latest
     commands:
       - npm install -g typescript
+      - npm install Next
       - npm install
-  pre_build:
-    commands:
-      -echo Nothing to do in the pre_build phase...
   build:
     commands:
       - npm run build
-  post_build:
-    commands:
-      - echo Build completed on `date`
 
 artifacts:
   files:
