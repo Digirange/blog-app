@@ -6,10 +6,10 @@ phases:
       nodejs: latest
     commands:
       - npm install -g npm-install-peers
-      - npm-install-peers
       - npm install -g typescript
       - npm install next
       - npm install
+      - npm-install-peers
   build:
     commands:
       - npm run build
