@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
-      - npm install -g typescript
+      - npm -p typescript
       - npm install
   build:
     commands:
