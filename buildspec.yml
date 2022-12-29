@@ -5,14 +5,14 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
-      - npm install -g npm-install-peers
       - npm install -g typescript
       - npm install next
       - npm install
-      - npm-install-peers
   build:
     commands:
       - npm run build
+  post_build:
+    commands:
       - echo $CODEBUILD_SRC_DIR
 
 artifacts:
