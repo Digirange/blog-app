@@ -6,7 +6,7 @@ phases:
       nodejs: latest
     commands:
       - npm install -g typescript
-      - npm install Next
+      - npm install next
       - npm install
   build:
     commands:
