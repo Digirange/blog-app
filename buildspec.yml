@@ -19,5 +19,5 @@ artifacts:
   files:
     - package.json
     - package-lock.json
-    - '/var/app/current/.next'
+    - 'build/**/*'
   discard-paths: yes
