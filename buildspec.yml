@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: latest
+      nodejs: 14.15.1
     commands:
       - npm install -g typescript
       - npm install next
