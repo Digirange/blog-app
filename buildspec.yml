@@ -21,5 +21,3 @@ artifacts:
   files:
     - package.json
     - package-lock.json
-    - 'build/**/*'
-  discard-paths: yes
