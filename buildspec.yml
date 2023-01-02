@@ -6,8 +6,8 @@ phases:
       nodejs: latest
     commands:
       - npm install -g typescript
-      - npm install next
-      - npm install
+      - npm install next --legacy-peer-deps
+      - npm install --legacy-peer-deps
   build:
     commands:
       - npm run build
