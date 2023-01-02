@@ -1,7 +1,16 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/aboutme": "pages/aboutme.html",
+  "/api/hello": "pages/api/hello.js",
+  "/blogs/developer": "pages/blogs/developer.js",
+  "/blogs": "pages/blogs.js",
+  "/blogs/developer/[slug]": "pages/blogs/developer/[slug].js",
+  "/blogs/life/[slug]": "pages/blogs/life/[slug].js",
+  "/blogs/life": "pages/blogs/life.js",
+  "/blogs/sports/[slug]": "pages/blogs/sports/[slug].js",
+  "/blogs/sports": "pages/blogs/sports.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/blogs": "pages/blogs.js"
+  "/404": "pages/404.html"
 }
