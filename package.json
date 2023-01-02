@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "echo '$PWD' && npm install --legacy-peer-deps && next build && next start --port $PORT",
+    "start": "pwd && npm install --legacy-peer-deps && next build && next start --port $PORT",
     "lint": "next lint"
   },
   "dependencies": {

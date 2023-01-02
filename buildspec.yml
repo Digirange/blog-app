@@ -5,11 +5,13 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
+      - pwd
       - npm install -g typescript
       - npm install next
       - npm install
   build:
     commands:
+      - pwd
       - npm run build
   post_build:
     commands:
