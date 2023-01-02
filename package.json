@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "ls -la && npm install --legacy-peer-deps && next build && next start --port $PORT",
+    "start": "ls -la && npm install --legacy-peer-deps && tsc && next start --port $PORT",
     "lint": "next lint"
   },
   "dependencies": {
