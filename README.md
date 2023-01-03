@@ -133,7 +133,8 @@ npm run dev
 - [ ] Add a comment section
 - [ ] Move all text fields to ./constants
 - [ ] Implement Meta Data
-- [ ] Add GitHub Actions
+- [x] Migrate to AWS
+- [ ] Setup CI/CD with Code Pipeline in AWS
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
