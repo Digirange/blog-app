@@ -6,18 +6,20 @@ phases:
       nodejs: latest
     commands:
       - pwd
+      - echo Installing dependencies now
       - npm install -g typescript
       - npm install next
       - npm install
+      - echo Listing all files in current directory now
+      - ls -la
   build:
     commands:
       - pwd
       - npm run build
-  post_build:
-    commands:
-      - echo $CODEBUILD_SRC_DIR
+      - echo Listing build files now
+      - ls -la
 
 artifacts:
   files:
     - '**/*'
-
+  discard-paths: no
