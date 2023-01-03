@@ -8,7 +8,7 @@ phases:
       - pwd
       - echo Installing dependencies now
       - npm install --location=global typescript --legacy-peer-deps
-      - npm install next
+      - npm install next --legacy-peer-deps
       - npm install --legacy-peer-deps
       - echo Listing all files in current directory now
       - ls -la
