@@ -59,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://mtd-blog.vercel.app/)
+[![Product Name Screen Shot][product-screenshot]](http://blog-mtd.us-east-1.elasticbeanstalk.com/)
 A simple and minimal blog that can be used as a base template.
 
 
@@ -77,6 +77,7 @@ Features:
 
 * [Next.js](https://nextjs.org/)
 * [Chakra-Ui](https://chakra-ui.com/)
+* [AWS](https://aws.amazon.com/)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -112,9 +113,9 @@ npm --version
 git clone https://github.com/Digirange/blog-app.git
 ```
 2. Install NPM packages
-   ```sh
-   npm install
-   ```
+```sh
+npm install
+```
 3. Start the test server
 ```sh
 npm run dev
