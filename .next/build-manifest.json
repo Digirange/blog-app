@@ -25,25 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/blogs/developer": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/blogs/developer.js"
-    ],
     "/blogs/developer/[slug]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/blogs/developer/[slug].js"
-    ],
-    "/blogs/life": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/blogs/life.js"
-    ],
-    "/blogs/life/[slug]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/blogs/life/[slug].js"
     ]
   },
   "ampFirstPages": []

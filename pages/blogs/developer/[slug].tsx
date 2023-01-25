@@ -3,7 +3,7 @@ import fs from 'fs'
 import _ from 'lodash'
 import path from 'path'
 import matter from 'gray-matter'
-import { Box, Text, Grid, GridItem, Heading, Image } from '@chakra-ui/react'
+import { Box, Text, Grid, GridItem, Heading, Image, Link } from '@chakra-ui/react'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Nav from '../../../components/navbar'
@@ -14,7 +14,7 @@ export default function IndexPage({ source, posts }: any) {
   const {
     scope: { title, description, url, date },
   } = source
-  const components = { Heading, Text, Box, Image }
+  const components = { Heading, Text, Box, Image, Link }
 
   return (
     <BlogPostBody source={source} components={components}/>
