@@ -15,7 +15,7 @@ export default function IndexPage({ source, posts }: any) {
   const {
     scope: { title, description, url, date },
   } = source
-  const components = { Heading, Text, Box, Image }
+  const components = { Heading, Text, Box }
   return (
     <BlogPostBody source={source} components={components}/>
     // <Box>
