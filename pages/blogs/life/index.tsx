@@ -7,10 +7,11 @@ import IndexPost from '../../../components/IndexPost'
 
 import Nav from '../../../components/navbar'
 import _ from 'lodash'
+import { slugRoot } from '../../../constants'
 
 const IndexPage = ({ posts }: any) => {
   return (
-    <Box minHeight='100vh' position='relative'>
+    <Box minHeight="100vh" position="relative">
       <Nav />
       <Box>
         <Text fontSize="5xl" fontWeight="bold" align="center">
@@ -27,13 +28,12 @@ const IndexPage = ({ posts }: any) => {
           ))}
         </Grid>
       </Box>
-
     </Box>
   )
 }
 
 export const getStaticProps = async () => {
-  const postPaths = path.join(process.cwd(), 'posts/life')
+  const postPaths = path.join(process.cwd(), slugRoot.life)
   const globPosts = glob.sync('**/*.mdx', { cwd: postPaths })
   const posts = _.chain(globPosts)
     .map((paths) => fs.readFileSync(path.join(postPaths, paths), 'utf-8'))

@@ -3,28 +3,37 @@ import fs from 'fs'
 import _ from 'lodash'
 import path from 'path'
 import matter from 'gray-matter'
-import { Box, Text, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Text, Grid, GridItem, Heading, Image } from '@chakra-ui/react'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Nav from '../../../components/navbar'
-
+import { slugRoot } from '../../../constants'
+import { BlogPostBody } from '../../../components/blogPostBody'
 
 export default function IndexPage({ source, posts }: any) {
   const {
     scope: { title, description, url, date },
   } = source
+  const components = { Heading, Text, Box, Image }
+
   return (
-    <Box height='100vh'>
-      <Nav />
-      <Box padding='50px'>
-        <Grid templateColumns="repeat(5, 1fr)" gap={4}>
-          <GridItem colStart={2} colEnd={5}>
-            <MDXRemote {...source} />
-          </GridItem>
-        </Grid>
-          </Box>
-    </Box>
+    <BlogPostBody source={source} components={components}/>
   )
+  // <BlogPostBody data={source, components}/>
+  // BlogPostBody({source, components})
+  // return (
+
+  //   <Box height="100vh">
+  //     <Nav />
+  //     <Box padding="50px">
+  //       <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+  //         <GridItem colStart={2} colEnd={5}>
+  //           <MDXRemote {...source} components={components} />
+  //         </GridItem>
+  //       </Grid>
+  //     </Box>
+  //   </Box>
+  // )
 }
 
 export function getStaticPaths() {
