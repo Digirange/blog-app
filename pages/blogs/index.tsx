@@ -64,7 +64,7 @@ export default function IndexPage({ posts }: any) {
         </GridItem>
         <GridItem rowStart={5} colStart={2} colEnd={4}>
           <Box paddingTop="10px">
-            <Text fontSize="xl" fontWeight="bold">
+            <Text as='ins' fontSize="xl" fontWeight="bold">
               Recent Blogs
             </Text>
           </Box>
