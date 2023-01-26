@@ -66,6 +66,7 @@ A simple and minimal blog that can be used as a base template.
 Features:
 * Built with Next.js allowing you to seamlessly connect your backend to your frontend
 * Built with Chakra-Ui component library for easy customization and bringing your project to life!
+* Hosted on Amazon's Web Service Elastic Beanstalk
 * Easy deployment with Vercel built by Next.js
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -132,7 +133,8 @@ npm run dev
 ## Roadmap
 
 - [ ] Add a comment section
-- [ ] Move all text fields to ./constants
+- [ ] Refactor About Me
+- [ ] Enable HTTPS
 - [ ] Implement Meta Data
 - [x] Migrate to AWS
 - [ ] Setup CI/CD with Code Pipeline in AWS
